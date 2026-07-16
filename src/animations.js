@@ -14,12 +14,13 @@ export function initAnimations() {
 }
 
 function createHeroAnimation() {
-  // --- Hero Entrance Animation ---
   gsap.set('.hero-greeting', { y: 20, opacity: 0 });
-  gsap.set('.hero-title', { y: 30, opacity: 0 });
+  gsap.set('.hero-role-wrapper', { y: 20, opacity: 0 });
+  gsap.set('.hero-tagline', { y: 30, opacity: 0 });
+  gsap.set('.hero-meta', { y: 20, opacity: 0 });
   gsap.set('.hero-buttons', { y: 30, opacity: 0 });
 
-  const heroTl = gsap.timeline({ delay: 0.5 });
+  const heroTl = gsap.timeline({ delay: 0.3 });
 
   heroTl
     .to('.hero-greeting', {
@@ -40,7 +41,17 @@ function createHeroAnimation() {
       '-=0.4'
     )
     .to(
-      '.hero-title',
+      '.hero-role-wrapper',
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.6,
+        ease: 'power3.out',
+      },
+      '-=0.4'
+    )
+    .to(
+      '.hero-tagline',
       {
         opacity: 1,
         y: 0,
@@ -48,6 +59,16 @@ function createHeroAnimation() {
         ease: 'power3.out',
       },
       '-=0.5'
+    )
+    .to(
+      '.hero-meta',
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.6,
+        ease: 'power3.out',
+      },
+      '-=0.3'
     )
     .to(
       '.hero-buttons',
@@ -71,14 +92,13 @@ function createHeroAnimation() {
 }
 
 function createScrollAnimations() {
-  // Shared toggleActions: play saat masuk, reverse saat scroll ke atas
   const TOGGLE = 'play none none reverse';
 
-  // --- Section Headings ---
-  gsap.utils.toArray('.section-label, .section-title').forEach((el) => {
+  // --- Section Headers ---
+  gsap.utils.toArray('.section-number, .section-label, .section-title').forEach((el) => {
     gsap.fromTo(
       el,
-      { y: 40, opacity: 0 },
+      { y: 30, opacity: 0 },
       {
         scrollTrigger: {
           trigger: el,
@@ -87,69 +107,54 @@ function createScrollAnimations() {
         },
         y: 0,
         opacity: 1,
-        duration: 0.8,
+        duration: 0.7,
         ease: 'power3.out',
       }
     );
   });
 
-  // --- About Section ---
-  gsap.fromTo(
-    '.about-text',
-    { x: -60, opacity: 0 },
-    {
-      scrollTrigger: {
-        trigger: '.about-text',
-        start: 'top 90%',
-        toggleActions: TOGGLE,
-      },
-      x: 0,
-      opacity: 1,
-      duration: 1,
-      ease: 'power3.out',
-    }
-  );
-
-  gsap.fromTo(
-    '.about-connect',
-    { x: 60, opacity: 0 },
-    {
-      scrollTrigger: {
-        trigger: '.about-connect',
-        start: 'top 90%',
-        toggleActions: TOGGLE,
-      },
-      x: 0,
-      opacity: 1,
-      duration: 1,
-      ease: 'power3.out',
-    }
-  );
-
-  gsap.utils.toArray('.stat-item').forEach((el, i) => {
+  // --- Work Cards ---
+  gsap.utils.toArray('.work-card').forEach((el, i) => {
     gsap.fromTo(
       el,
-      { y: 40, opacity: 0 },
+      { y: 50, opacity: 0 },
       {
         scrollTrigger: {
-          trigger: '.about-stats',
-          start: 'top 90%',
+          trigger: el,
+          start: 'top 88%',
           toggleActions: TOGGLE,
         },
         y: 0,
         opacity: 1,
-        duration: 0.6,
-        delay: i * 0.15,
+        duration: 0.8,
+        delay: i * 0.08,
         ease: 'power3.out',
       }
     );
   });
 
-  // --- Skills Cards ---
+  // --- Skills Intro ---
+  gsap.fromTo(
+    '.skills-intro',
+    { y: 30, opacity: 0 },
+    {
+      scrollTrigger: {
+        trigger: '.skills-intro',
+        start: 'top 90%',
+        toggleActions: TOGGLE,
+      },
+      y: 0,
+      opacity: 1,
+      duration: 0.8,
+      ease: 'power3.out',
+    }
+  );
+
+  // --- Skill Categories ---
   gsap.utils.toArray('.skill-category').forEach((el, i) => {
     gsap.fromTo(
       el,
-      { y: 60, opacity: 0 },
+      { y: 40, opacity: 0 },
       {
         scrollTrigger: {
           trigger: '#skills',
@@ -158,90 +163,48 @@ function createScrollAnimations() {
         },
         y: 0,
         opacity: 1,
-        duration: 0.8,
-        delay: i * 0.2,
+        duration: 0.7,
+        delay: i * 0.15,
         ease: 'power3.out',
       }
     );
   });
 
-  // --- Portfolio Cards ---
-  gsap.utils.toArray('.project-card').forEach((el, i) => {
+  // --- Career Items ---
+  gsap.utils.toArray('.career-item').forEach((el, i) => {
     gsap.fromTo(
       el,
-      { y: 60, opacity: 0 },
+      { x: -30, opacity: 0 },
       {
         scrollTrigger: {
           trigger: el,
-          start: 'top 85%',
+          start: 'top 90%',
           toggleActions: TOGGLE,
         },
-        y: 0,
+        x: 0,
         opacity: 1,
-        duration: 0.8,
-        delay: i * 0.1, // reduced delay for grid
+        duration: 0.6,
+        delay: i * 0.1,
         ease: 'power3.out',
       }
     );
   });
 
-  // --- Experience Timeline ---
-  gsap.utils.toArray('.timeline-item').forEach((item, index) => {
-    const isOdd = index % 2 === 0;
-    const content = item.querySelector('.timeline-content');
-    const dot = item.querySelector('.timeline-dot');
-
-    if (content) {
-      gsap.fromTo(
-        content,
-        { x: isOdd ? -60 : 60, opacity: 0 },
-        {
-          scrollTrigger: {
-            trigger: item,
-            start: 'top 90%',
-            toggleActions: TOGGLE,
-          },
-          x: 0,
-          opacity: 1,
-          duration: 0.8,
-          ease: 'power3.out',
-        }
-      );
-    }
-
-    if (dot) {
-      gsap.fromTo(
-        dot,
-        { scale: 0 },
-        {
-          scrollTrigger: {
-            trigger: item,
-            start: 'top 90%',
-            toggleActions: TOGGLE,
-          },
-          scale: 1,
-          duration: 0.5,
-          ease: 'back.out(2)',
-        }
-      );
-    }
-  });
-
-  // --- Education Cards ---
-  gsap.utils.toArray('.edu-card').forEach((el, i) => {
+  // --- Lab Cards ---
+  gsap.utils.toArray('.lab-card').forEach((el, i) => {
     gsap.fromTo(
       el,
-      { y: 50, opacity: 0 },
+      { y: 40, opacity: 0 },
       {
         scrollTrigger: {
-          trigger: '#education',
-          start: 'top 90%',
+          trigger: el,
+          start: 'top 88%',
           toggleActions: TOGGLE,
         },
         y: 0,
         opacity: 1,
         duration: 0.7,
-        delay: i * 0.2,
+        delay: i * 0.12,
         ease: 'power3.out',
       }
     );
@@ -249,18 +212,86 @@ function createScrollAnimations() {
 
   // --- Contact Section ---
   gsap.fromTo(
-    '.contact-content',
-    { y: 60, opacity: 0, scale: 0.95 },
+    '.contact-about',
+    { x: -40, opacity: 0 },
     {
       scrollTrigger: {
         trigger: '#contact',
         start: 'top 85%',
         toggleActions: TOGGLE,
       },
+      x: 0,
+      opacity: 1,
+      duration: 0.8,
+      ease: 'power3.out',
+    }
+  );
+
+  gsap.fromTo(
+    '.contact-info',
+    { x: 40, opacity: 0 },
+    {
+      scrollTrigger: {
+        trigger: '#contact',
+        start: 'top 85%',
+        toggleActions: TOGGLE,
+      },
+      x: 0,
+      opacity: 1,
+      duration: 0.8,
+      ease: 'power3.out',
+    }
+  );
+
+  gsap.utils.toArray('.contact-stat').forEach((el, i) => {
+    gsap.fromTo(
+      el,
+      { y: 20, opacity: 0 },
+      {
+        scrollTrigger: {
+          trigger: '.contact-stats',
+          start: 'top 88%',
+          toggleActions: TOGGLE,
+        },
+        y: 0,
+        opacity: 1,
+        duration: 0.5,
+        delay: i * 0.15,
+        ease: 'power3.out',
+      }
+    );
+  });
+
+  // --- Lab Footer ---
+  gsap.fromTo(
+    '.lab-footer',
+    { y: 30, opacity: 0 },
+    {
+      scrollTrigger: {
+        trigger: '.lab-footer',
+        start: 'top 95%',
+        toggleActions: TOGGLE,
+      },
       y: 0,
       opacity: 1,
-      scale: 1,
-      duration: 1,
+      duration: 0.6,
+      ease: 'power3.out',
+    }
+  );
+
+  // --- Career Download ---
+  gsap.fromTo(
+    '.career-download',
+    { y: 20, opacity: 0 },
+    {
+      scrollTrigger: {
+        trigger: '.career-download',
+        start: 'top 95%',
+        toggleActions: TOGGLE,
+      },
+      y: 0,
+      opacity: 1,
+      duration: 0.6,
       ease: 'power3.out',
     }
   );
@@ -278,19 +309,5 @@ function createScrollAnimations() {
         navbar.classList.remove('scrolled');
       }
     },
-  });
-
-  // --- Parallax bg glows ---
-  gsap.utils.toArray('.bg-glow').forEach((glow) => {
-    gsap.to(glow, {
-      scrollTrigger: {
-        trigger: glow.parentElement,
-        start: 'top bottom',
-        end: 'bottom top',
-        scrub: 1,
-      },
-      y: -80,
-      ease: 'none',
-    });
   });
 }

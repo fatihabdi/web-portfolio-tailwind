@@ -1,12 +1,11 @@
 import './styles.css';
-import { initThreeScene } from './three-scene.js';
+import { initThreeScene, destroyThreeScene } from './three-scene.js';
 import { initAnimations } from './animations.js';
 
 // --- Init ---
-// Vite loads modules async, so DOMContentLoaded may already have fired.
-// Use readyState check to handle both cases.
 function init() {
   initThreeScene();
+  initTypingAnimation();
   initAnimations();
   initNavigation();
   initActiveLinks();
@@ -16,6 +15,51 @@ if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', init);
 } else {
   init();
+}
+
+// --- Typing Animation ---
+function initTypingAnimation() {
+  const el = document.getElementById('typing-role');
+  if (!el) return;
+
+  const words = ['Software Engineer', 'QA Engineer'];
+  let wordIndex = 0;
+  let charIndex = 0;
+  let isDeleting = false;
+  let timeout;
+
+  function type() {
+    const current = words[wordIndex];
+
+    if (!isDeleting) {
+      // Typing forward
+      charIndex++;
+      el.textContent = current.substring(0, charIndex);
+
+      if (charIndex === current.length) {
+        // Pause at full word
+        isDeleting = true;
+        timeout = setTimeout(type, 2000);
+        return;
+      }
+      timeout = setTimeout(type, 80 + Math.random() * 60);
+    } else {
+      // Deleting backward
+      charIndex--;
+      el.textContent = current.substring(0, charIndex);
+
+      if (charIndex === 0) {
+        isDeleting = false;
+        wordIndex = (wordIndex + 1) % words.length;
+        timeout = setTimeout(type, 400);
+        return;
+      }
+      timeout = setTimeout(type, 40 + Math.random() * 30);
+    }
+  }
+
+  // Start typing after GSAP hero animation completes
+  setTimeout(type, 2000);
 }
 
 // --- Mobile Navigation ---
