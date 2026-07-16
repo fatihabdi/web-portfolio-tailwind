@@ -1,0 +1,60 @@
+<svg width="600" height="300" viewBox="0 0 600 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="600" height="300" fill="#0a0a0f"/>
+  <g opacity="0.05">
+    <rect x="50" y="50" width="200" height="200" rx="10" fill="#06b6d4" transform="rotate(15, 150, 150)"/>
+    <rect x="350" y="30" width="180" height="240" rx="10" fill="#8b5cf6" transform="rotate(-10, 440, 150)"/>
+  </g>
+  <!-- Grid layout -->
+  <g opacity="0.8">
+    <!-- Sidebar -->
+    <rect x="60" y="60" width="40" height="180" rx="6" fill="#8b5cf6" opacity="0.3"/>
+    <rect x="65" y="70" width="30" height="4" rx="2" fill="#8b5cf6" opacity="0.8"/>
+    <rect x="65" y="82" width="30" height="4" rx="2" fill="#8b5cf6" opacity="0.4"/>
+    <rect x="65" y="94" width="30" height="4" rx="2" fill="#8b5cf6" opacity="0.4"/>
+    <rect x="65" y="106" width="30" height="4" rx="2" fill="#8b5cf6" opacity="0.4"/>
+    <rect x="65" y="118" width="30" height="4" rx="2" fill="#8b5cf6" opacity="0.4"/>
+    
+    <!-- Header bar -->
+    <rect x="115" y="60" width="420" height="30" rx="6" fill="#06b6d4" opacity="0.15"/>
+    <rect x="125" y="70" width="60" height="4" rx="2" fill="#06b6d4" opacity="0.6"/>
+    <rect x="195" y="70" width="80" height="4" rx="2" fill="#06b6d4" opacity="0.4"/>
+    <circle cx="510" cy="75" r="7" fill="#06b6d4" opacity="0.4"/>
+    <circle cx="525" cy="75" r="7" fill="#8b5cf6" opacity="0.4"/>
+    
+    <!-- Cards grid -->
+    <rect x="115" y="100" width="130" height="65" rx="6" fill="#06b6d4" opacity="0.12"/>
+    <rect x="125" y="112" width="40" height="4" rx="2" fill="#06b6d4" opacity="0.6"/>
+    <rect x="125" y="122" width="80" height="4" rx="2" fill="#06b6d4" opacity="0.3"/>
+    <rect x="125" y="142" width="25" height="4" rx="2" fill="#06b6d4" opacity="0.5"/>
+    <rect x="155" y="142" width="25" height="4" rx="2" fill="#06b6d4" opacity="0.5"/>
+    <rect x="185" y="142" width="25" height="4" rx="2" fill="#06b6d4" opacity="0.5"/>
+    
+    <rect x="255" y="100" width="130" height="65" rx="6" fill="#8b5cf6" opacity="0.12"/>
+    <rect x="265" y="112" width="50" height="4" rx="2" fill="#8b5cf6" opacity="0.6"/>
+    <rect x="265" y="122" width="70" height="4" rx="2" fill="#8b5cf6" opacity="0.3"/>
+    <rect x="265" y="142" width="30" height="4" rx="2" fill="#8b5cf6" opacity="0.5"/>
+    
+    <rect x="395" y="100" width="140" height="65" rx="6" fill="#06b6d4" opacity="0.12"/>
+    <rect x="405" y="112" width="35" height="4" rx="2" fill="#06b6d4" opacity="0.6"/>
+    <rect x="405" y="122" width="90" height="4" rx="2" fill="#06b6d4" opacity="0.3"/>
+    
+    <!-- Bottom table -->
+    <rect x="115" y="178" width="420" height="62" rx="6" fill="white" opacity="0.04"/>
+    <rect x="125" y="190" width="100" height="4" rx="2" fill="white" opacity="0.15"/>
+    <rect x="240" y="190" width="70" height="4" rx="2" fill="white" opacity="0.15"/>
+    <rect x="325" y="190" width="60" height="4" rx="2" fill="white" opacity="0.15"/>
+    <rect x="400" y="190" width="80" height="4" rx="2" fill="white" opacity="0.15"/>
+    
+    <rect x="125" y="206" width="100" height="4" rx="2" fill="white" opacity="0.08"/>
+    <rect x="240" y="206" width="70" height="4" rx="2" fill="white" opacity="0.08"/>
+    <rect x="325" y="206" width="60" height="4" rx="2" fill="white" opacity="0.08"/>
+    <rect x="400" y="206" width="80" height="4" rx="2" fill="white" opacity="0.08"/>
+    
+    <rect x="125" y="222" width="100" height="4" rx="2" fill="white" opacity="0.08"/>
+    <rect x="240" y="222" width="70" height="4" rx="2" fill="white" opacity="0.08"/>
+    <rect x="325" y="222" width="60" height="4" rx="2" fill="white" opacity="0.08"/>
+    <rect x="400" y="222" width="80" height="4" rx="2" fill="white" opacity="0.08"/>
+  </g>
+  <!-- Title text -->
+  <text x="300" y="280" text-anchor="middle" fill="white" font-family="Inter, sans-serif" font-size="14" font-weight="600" opacity="0.6">ERP INTERNAL</text>
+</svg>

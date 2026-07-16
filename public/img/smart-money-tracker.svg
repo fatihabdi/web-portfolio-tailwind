@@ -1,0 +1,30 @@
+<svg width="600" height="300" viewBox="0 0 600 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="600" height="300" fill="#0a0a0f"/>
+  <g opacity="0.05">
+    <circle cx="100" cy="100" r="80" fill="#06b6d4"/>
+    <circle cx="300" cy="200" r="100" fill="#8b5cf6"/>
+    <circle cx="500" cy="80" r="60" fill="#06b6d4"/>
+  </g>
+  <g opacity="0.8">
+    <!-- Chart bars -->
+    <rect x="80" y="180" width="30" height="60" rx="4" fill="#06b6d4"/>
+    <rect x="120" y="150" width="30" height="90" rx="4" fill="#8b5cf6"/>
+    <rect x="160" y="120" width="30" height="120" rx="4" fill="#06b6d4"/>
+    <rect x="200" y="170" width="30" height="70" rx="4" fill="#8b5cf6"/>
+    <rect x="240" y="100" width="30" height="140" rx="4" fill="#06b6d4"/>
+    <rect x="280" y="140" width="30" height="100" rx="4" fill="#8b5cf6"/>
+    <rect x="320" y="80" width="30" height="160" rx="4" fill="#06b6d4"/>
+    <rect x="360" y="130" width="30" height="110" rx="4" fill="#8b5cf6"/>
+    <rect x="400" y="90" width="30" height="150" rx="4" fill="#06b6d4"/>
+    <rect x="440" y="110" width="30" height="130" rx="4" fill="#8b5cf6"/>
+    <rect x="480" y="70" width="30" height="170" rx="4" fill="#06b6d4"/>
+    <rect x="520" y="160" width="30" height="80" rx="4" fill="#8b5cf6"/>
+  </g>
+  <!-- Line chart -->
+  <path d="M80 200 Q130 180 180 160 Q230 220 280 140 Q330 180 380 100 Q430 150 480 80 Q530 120 560 100" stroke="#22d3ee" stroke-width="2" fill="none" opacity="0.6"/>
+  <path d="M80 220 Q130 200 180 180 Q230 240 280 160 Q330 200 380 120 Q430 170 480 100 Q530 140 560 120" stroke="#a78bfa" stroke-width="2" fill="none" opacity="0.4"/>
+  <!-- Dollar sign -->
+  <text x="300" y="220" text-anchor="middle" fill="white" font-family="Inter, sans-serif" font-size="40" font-weight="800" opacity="0.15">$</text>
+  <!-- Title text -->
+  <text x="300" y="275" text-anchor="middle" fill="white" font-family="Inter, sans-serif" font-size="14" font-weight="600" opacity="0.6">SMART MONEY TRACKER</text>
+</svg>
